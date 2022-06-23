@@ -4,7 +4,7 @@ export class Turma {
   protected nome: string;
 
   protected modulo: number;
-
+  
   constructor(id: string, nome: string, modulo: number) {
     console.log("FAZENDO NOVA TURMA");
     this.turma_id = id;
