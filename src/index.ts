@@ -1,8 +1,18 @@
-import { Turma } from "./Turma";
+import { app } from "./app";
+import {TurmaController} from "./endpoint/TurmaController"
 
 console.log("Hello World!");
 
-const shaw = new Turma("1", "Shaw", 0);
+const turmaController = new TurmaController()
+app.post("/turma",turmaController.createTurma)
+
+app.get("/turma",turmaController.getTurma)
+
+
+
+
+
+/* const shaw = new Turma("1", "Shaw", 0);
 
 console.log("id", shaw.getId());
 
@@ -21,7 +31,7 @@ console.log("Nome da Turma", silveira.getNome());
 console.log("Modulo", silveira.getModulo());
 
 //--------------------------------------//
-
+ */
 
 
 
