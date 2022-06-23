@@ -29,4 +29,19 @@ export class EstudanteController {
       res.status(500).send({ message: error.message });
     }
   }
+
+  async getEstudantes(req: Request, res: Response) {
+    try {
+      const estudanteData = new EstudanteData();
+      const todosOsEstudantes = await estudanteData.pegarEstudantes();
+
+      if (!todosOsEstudantes.length) {
+        throw new Error("Não encontrei nenhum estudante");
+      }
+
+      res.status(201).send(todosOsEstudantes);
+    } catch (error: any) {
+      res.status(500).send({ message: error.message });
+    }
+  }
 }
