@@ -27,3 +27,7 @@ Content-Type: application/json
         "hobbies": "Taca pedra em ônibus"
 
 }
+
+#############################
+
+GET http://localhost:3003/estudante

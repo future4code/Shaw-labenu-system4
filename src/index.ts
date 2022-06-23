@@ -16,7 +16,7 @@ app.get("/turma",turmaController.getTurma)
 const estudanteController = new EstudanteController()
 app.post("/estudante", estudanteController.criarEstudante)
 
-
+app.get("/estudante", estudanteController.getEstudantes)
 
 
 
