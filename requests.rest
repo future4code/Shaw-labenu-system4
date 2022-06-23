@@ -3,7 +3,7 @@ Content-Type: application/json
 
 {
 
-    "nome":"Silveira",
+    "nome":"PABLITO",
     "modulo":5
 }
 
@@ -12,3 +12,18 @@ Content-Type: application/json
 
 GET http://localhost:3003/turma
 Content-Type: application/json
+
+#############################
+
+POST  http://localhost:3003/estudante
+Content-Type: application/json
+
+{
+
+        "nome": "Servin",
+        "email": "servulin@gmail.com",
+        "data_nasc": "1978/09/26",
+        "turma_id": "01",
+        "hobbies": "Taca pedra em ônibus"
+
+}

@@ -1,4 +1,4 @@
-import { Usuario } from "./Usuario";
+import { Usuario } from "./model/Usuario";
 import { Hobby } from "./Hobby";
 
 export class Estudante extends Usuario {
