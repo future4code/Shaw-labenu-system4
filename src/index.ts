@@ -13,7 +13,7 @@ app.post("/turma",turmaController.createTurma)
 
 app.get("/turma",turmaController.getTurma)
 
-app.put("/turma", turmaController.updateModulo)
+app.put("/turma/:id", turmaController.updateModulo)
 
 //----------------ESTUDANTE--------------------//
 

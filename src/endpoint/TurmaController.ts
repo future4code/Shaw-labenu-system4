@@ -44,8 +44,9 @@ export class TurmaController {
     async updateModulo(req: Request, res: Response) {
         try {
             const { modulo } = req.body
+            
             const turmaData = new TurmaData()
-            const updateModulo = await turmaData.updateTurma(modulo)
+            const updateModulo = await turmaData.updateTurma(modulo,req.params.id)
             
             if (!modulo) {
                 throw new Error("Mudulo tem que ser preechido");
