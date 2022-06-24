@@ -1,6 +1,7 @@
 import { app } from "./app";
 import { EstudanteController } from "./endpoint/EstudanteController";
 import {TurmaController} from "./endpoint/TurmaController"
+import {DocenteController} from "./endpoint/DocenteController";
 
 console.log("Hello World!");
 
@@ -18,6 +19,12 @@ app.post("/estudante", estudanteController.criarEstudante)
 
 app.get("/estudante", estudanteController.getEstudantes)
 
+//----------------DOCENTE--------------------//
+
+const docenteController = new DocenteController()
+app.post("/docente", docenteController.criarDocente)
+
+app.get("/docente", docenteController.getDocentes)
 
 
 /* const shaw = new Turma("1", "Shaw", 0);

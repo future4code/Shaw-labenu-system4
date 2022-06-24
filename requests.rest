@@ -19,15 +19,30 @@ POST  http://localhost:3003/estudante
 Content-Type: application/json
 
 {
-
         "nome": "Servin",
         "email": "servulin@gmail.com",
         "data_nasc": "1978/09/26",
         "turma_id": "01",
         "hobbies": "Taca pedra em ônibus"
-
 }
 
 #############################
 
 GET http://localhost:3003/estudante
+
+############################
+
+POST http://localhost:3003/docente
+content-type: application/json
+
+{
+        "nome": "Vitor Hugo",
+        "email": "vitor@gmail.com",
+        "data_nasc": "1978/09/26",
+        "turma_id": "01",
+        "especialidades": "Machine Learning"
+}
+
+###########################
+
+GET http://localhost:3003/docente
