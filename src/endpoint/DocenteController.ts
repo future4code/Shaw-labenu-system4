@@ -1,4 +1,4 @@
-import { Request, Response } from "express";
+import { request, Request, response, Response } from "express";
 import { DocenteData } from "../data/DocenteData";
 import { Docente } from "../Docente";
 
@@ -25,6 +25,21 @@ export class DocenteController {
       const docenteData = new DocenteData();
       const anwser = await docenteData.CriarDocente(docente);
       res.status(201).send("Docente criado");
+    } catch (error: any) {
+      res.status(500).send({ message: error.message });
+    }
+  }
+
+  async getDocentes(req: Request, res: Response) {
+    try {
+      const docenteData = new DocenteData();
+      const todosOsDocentes = await docenteData.pegarDocentes();
+
+      if (!todosOsDocentes.length) {
+        throw new Error("Não encontrei nenhum docente");
+      }
+
+      res.status(201).send(todosOsDocentes);
     } catch (error: any) {
       res.status(500).send({ message: error.message });
     }
