@@ -1,4 +1,4 @@
-import { Turma } from "../Turma";
+import { Turma } from "../Turma"
 
 export class Usuario {
   protected id: string;
