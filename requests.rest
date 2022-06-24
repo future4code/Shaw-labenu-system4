@@ -8,7 +8,7 @@ Content-Type: application/json
 }
 
 ###
-PUT http://localhost:3003/turma
+PUT http://localhost:3003/turma/1656011964827
 Content-Type: application/json
 
 {

@@ -17,8 +17,8 @@ export class TurmaData extends BaseDataBase {
         return result
     }
 
-    async updateTurma(modulo: Turma) {
-        await this.getConection().update({ modulo: modulo.getModulo() }).where("id")
+    async updateTurma(modulo: string, id:string) {
+        await this.getConection().update({ modulo: modulo}).where("id",id).into("Turma")
     }
 
 
