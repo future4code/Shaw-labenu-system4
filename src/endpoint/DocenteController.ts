@@ -1,6 +1,7 @@
 import { request, Request, response, Response } from "express";
 import { DocenteData } from "../data/DocenteData";
-import { Docente } from "../Docente";
+import { TurmaData } from "../data/TurmaData";
+import { Docente } from "../model/Docente";
 
 export class DocenteController {
   async criarDocente(req: Request, res: Response) {
@@ -28,7 +29,7 @@ export class DocenteController {
     } catch (error: any) {
       res.status(500).send({ message: error.message });
     }
-  }
+  };
 
   async getDocentes(req: Request, res: Response) {
     try {
@@ -40,6 +41,25 @@ export class DocenteController {
       }
 
       res.status(201).send(todosOsDocentes);
+    } catch (error: any) {
+      res.status(500).send({ message: error.message });
+    }
+  };
+
+
+  async updateDocente(req: Request, res: Response) {
+    try {
+      const { turma_id } = req.body
+      const { id } = req.params
+      const docenteData = new DocenteData()
+
+      if (!turma_id) {
+        throw new Error("Id da turma tem que ser preechido")
+      }
+
+      const updateDoscenteTurma = await docenteData.updateDoscenteTurma(turma_id, id)
+      res.status(201).end("Turma do docente atulizada!")
+
     } catch (error: any) {
       res.status(500).send({ message: error.message });
     }

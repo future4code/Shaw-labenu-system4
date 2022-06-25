@@ -39,6 +39,17 @@ GET http://localhost:3003/estudante
 
 ############################
 
+
+PUT http://localhost:3003/estudante/01
+content-type: application/json
+
+{
+      "turma_id":"1656011964827"
+}
+
+
+##########################
+
 POST http://localhost:3003/docente
 content-type: application/json
 
@@ -53,3 +64,14 @@ content-type: application/json
 ###########################
 
 GET http://localhost:3003/docente
+
+
+
+#################
+
+PUT http://localhost:3003/docente/01
+Content-Type: application/json
+
+{
+    "turma_id": "1656011964827"
+}

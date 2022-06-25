@@ -1,6 +1,6 @@
 import { Request, Response } from "express"
 import { TurmaData } from "../data/TurmaData";
-import { Turma } from "../Turma";
+import { Turma } from "../model/Turma";
 
 export class TurmaController {
 
@@ -44,7 +44,6 @@ export class TurmaController {
     async updateModulo(req: Request, res: Response) {
         try {
             const { modulo } = req.body
-            
             const turmaData = new TurmaData()
             const updateModulo = await turmaData.updateTurma(modulo,req.params.id)
             
