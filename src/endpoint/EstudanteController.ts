@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { EstudanteData } from "../data/EstudanteData";
-import { Estudante } from "../Estudante";
+import { Estudante } from "../model/Estudante";
 
 export class EstudanteController {
   async criarEstudante(req: Request, res: Response) {
@@ -43,5 +43,26 @@ export class EstudanteController {
     } catch (error: any) {
       res.status(500).send({ message: error.message });
     }
+  };
+
+  async updateEstudantes(req: Request, res: Response) {
+    try {
+
+      const { turma_id } = req.body
+      const { id } = req.params
+
+      if (!turma_id) {
+        throw new Error("Id da turma tem que ser preenchido")
+      }
+      const estudanteData = new EstudanteData();
+      const updateTurma = await estudanteData.updateEstudante(turma_id, id)
+      res.status(200).end(`Estudante foi trocado de turma`)
+
+    } catch (error: any) {
+      res.status(400).send({ message: error.message })
+    }
+
   }
+
+
 }

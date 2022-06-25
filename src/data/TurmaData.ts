@@ -1,4 +1,4 @@
-import { Turma } from "../Turma";
+import { Turma } from "../model/Turma";
 import BaseDataBase from "./BaseDataBase";
 
 
@@ -17,8 +17,8 @@ export class TurmaData extends BaseDataBase {
         return result
     }
 
-    async updateTurma(modulo: string, id:string) {
-        await this.getConection().update({ modulo: modulo}).where("id",id).into("Turma")
+    async updateTurma(modulo: string, id: string) {
+        await this.getConection().update({ modulo: modulo }).where("id", id).into("Turma")
     }
 
 

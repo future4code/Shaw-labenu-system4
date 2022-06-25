@@ -18,9 +18,12 @@ app.put("/turma/:id", turmaController.updateModulo)
 //----------------ESTUDANTE--------------------//
 
 const estudanteController = new EstudanteController()
+
 app.post("/estudante", estudanteController.criarEstudante)
 
 app.get("/estudante", estudanteController.getEstudantes)
+
+app.put("/estudante/:id", estudanteController.updateEstudantes)
 
 //----------------DOCENTE--------------------//
 
@@ -28,6 +31,8 @@ const docenteController = new DocenteController()
 app.post("/docente", docenteController.criarDocente)
 
 app.get("/docente", docenteController.getDocentes)
+
+app.put("/docente/:id",docenteController.updateDocente)
 
 
 /* const shaw = new Turma("1", "Shaw", 0);

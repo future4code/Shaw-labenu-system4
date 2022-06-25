@@ -1,4 +1,4 @@
-import { Docente } from "../Docente";
+import { Docente } from "../model/Docente";
 import BaseDataBase from "./BaseDataBase";
 
 export class DocenteData extends BaseDataBase {
@@ -18,5 +18,8 @@ export class DocenteData extends BaseDataBase {
   async pegarDocentes() {
     const result = await this.getConection().select("*").from("Docente");
     return result;
+  }
+  async updateDoscenteTurma(turma_id:string,id:string){
+  await this.getConection().update({turma_id: turma_id}).where("id", id).into("Docente")
   }
 }
